@@ -13,9 +13,9 @@ class CountriesController extends Controller
         $search = $request->get('search', '');
         $countries = Country::where(
             'name',
-            'LIKE',
+            'ILIKE',
             "%$search%"
-        )->get();
+        )->get(['code', 'name']);
 
         return $countries;
     }

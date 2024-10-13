@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamps();
 
             // Add an index to name column to improve search performance
-            $table->index('name');
+            $table->index('name')->algorithm('gin');
         });
     }
 
